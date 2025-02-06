@@ -1,0 +1,23 @@
+// jest.config.js
+  module.exports = {
+    testEnvironment: 'node',
+    verbose: true,
+  };
+
+  // __tests__/example.test.js
+  const fetch = require('node-fetch');
+
+  describe('GitHub Website Tests', () => {
+    test('Home page should load successfully', async () => {
+      const response = await fetch('https://your-github-website-url.com');
+      expect(response.status).toBe(200);
+    });
+
+    test('API endpoint should return expected data', async () => {
+      const response = await fetch('https://your-github-website-url.com/api/data');
+      const data = await response.json();
+      expect(data).toEqual({ key: 'value' }); // Replace with expected data
+    });
+  });
+
+  // To run the tests, use the command: jest
